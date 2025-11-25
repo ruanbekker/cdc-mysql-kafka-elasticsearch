@@ -1,5 +1,6 @@
 # cdc-mysql-kafka-elasticsearch
 
+Change Data Capture (CDC) Pipeline using MySQL, Kafka, Kafka Connect, and Elasticsearch.
 
 ## Overview
 
