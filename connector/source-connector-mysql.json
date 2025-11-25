@@ -1,0 +1,26 @@
+{
+  "name": "employees-mysql-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "mysql",
+    "database.port": "3306",
+    "database.user": "debezium",
+    "database.password": "dbz",
+    "database.server.id": "184054",
+    "database.server.name": "employees",
+    "database.include.list": "employees",
+    "table.include.list": "employees.user_info,employees.user_salaries",
+    "topic.prefix": "employees",
+    "database.allowPublicKeyRetrieval": "true",
+    "database.ssl.mode": "DISABLED",
+    "include.schema.changes": "false",
+    "transforms": "route",
+    "transforms.route.type": "org.apache.kafka.connect.transforms.RegexRouter",
+    "transforms.route.regex": "([^.]+)\\.(.*)",
+    "transforms.route.replacement": "$1_$2",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+    "schema.history.internal.kafka.topic": "dbhistory.employees"
+  }
+}
+
